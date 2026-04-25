@@ -14,6 +14,20 @@ public class Engine {
             return;
         }
 
+        switch (gameName) {
+            case "Even":
+                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                break;
+            case "Calc":
+                System.out.println("What is the result of the expression?");
+                break;
+            case "GCD":
+                System.out.println("Find the greatest common divisor of given numbers.");
+                break;
+            default:
+                break;
+        }
+
         for (int i = 0; i < 3; i++) {
             String question = "";
             String correctAnswer = "";
@@ -31,6 +45,13 @@ public class Engine {
                     int number2 = Integer.parseInt(items[2]);
                     String operation = items[1];
                     correctAnswer = Calc.getCorrectAnswer(number1, number2, operation);
+                    break;
+                case "GCD":
+                    question = GCD.generateQuestion();
+                    String[] numbers = question.split(" ");
+                    int n1 = Integer.parseInt(numbers[0]);
+                    int n2 = Integer.parseInt(numbers[1]);
+                    correctAnswer = GCD.getCorrectAnswer(n1, n2);
                     break;
                 default:
                     return;
