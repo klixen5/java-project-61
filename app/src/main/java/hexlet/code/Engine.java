@@ -24,6 +24,9 @@ public class Engine {
             case "GCD":
                 System.out.println("Find the greatest common divisor of given numbers.");
                 break;
+            case "Progression":
+                System.out.println("What number is missing in the progression?");
+                break;
             default:
                 break;
         }
@@ -52,6 +55,12 @@ public class Engine {
                     int n1 = Integer.parseInt(numbers[0]);
                     int n2 = Integer.parseInt(numbers[1]);
                     correctAnswer = GCD.getCorrectAnswer(n1, n2);
+                    break;
+                case "Progression":
+                    int[] progression = Progression.generateProgressing();
+                    int index = Progression.generateIndex(progression.length);
+                    question = Progression.generateQuestion(progression, index);
+                    correctAnswer = progression[index] + "";
                     break;
                 default:
                     return;
