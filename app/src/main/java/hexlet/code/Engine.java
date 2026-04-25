@@ -27,6 +27,9 @@ public class Engine {
             case "Progression":
                 System.out.println("What number is missing in the progression?");
                 break;
+            case "Prime":
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                break;
             default:
                 break;
         }
@@ -61,6 +64,10 @@ public class Engine {
                     int index = Progression.generateIndex(progression.length);
                     question = Progression.generateQuestion(progression, index);
                     correctAnswer = progression[index] + "";
+                    break;
+                case "Prime":
+                    question = Prime.generateQuestion();
+                    correctAnswer = Prime.getCorrectAnswer(Integer.parseInt(question));
                     break;
                 default:
                     return;
