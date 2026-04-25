@@ -3,10 +3,12 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class GCD {
+    private static final int MAX_START = 100;
+
     public static String generateQuestion() {
         var random = new Random();
-        var number1 = random.nextInt(100);
-        var number2 = random.nextInt(100);
+        var number1 = random.nextInt(MAX_START);
+        var number2 = random.nextInt(MAX_START);
         return number1 + " " + number2;
     }
 

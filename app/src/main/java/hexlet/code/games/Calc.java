@@ -3,11 +3,13 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Calc {
+    private static final int MAX_START = 100;
+
     public static String generateExpression() {
         var random = new Random();
         var operations = new String[] {"+", "-", "*"};
-        var number1 = String.valueOf(random.nextInt(100));
-        var number2 = String.valueOf(random.nextInt(100));
+        var number1 = String.valueOf(random.nextInt(MAX_START));
+        var number2 = String.valueOf(random.nextInt(MAX_START));
         var operation = operations[random.nextInt(operations.length)];
         return number1 + " " + operation + " " + number2;
     }

@@ -3,11 +3,16 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Progression {
+    private static final int MAX_START = 100;
+    private static final int MAX_STEP = 10;
+    private static final int MAX_LENGTH_BOUNDS = 6;
+    private static final int MIN_LENGTH = 5;
+
     public static int[] generateProgressing() {
         var random = new Random();
-        int start = random.nextInt(100);
-        int step = random.nextInt(10) + 1;
-        int length = random.nextInt(6) + 5;
+        int start = random.nextInt(MAX_START);
+        int step = random.nextInt(MAX_STEP) + 1;
+        int length = random.nextInt(MAX_LENGTH_BOUNDS) + MIN_LENGTH;
         int[] progressing = new int[length];
 
         for (int i = 0; i < length; i++) {

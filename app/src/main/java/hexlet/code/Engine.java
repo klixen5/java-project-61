@@ -9,6 +9,8 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
+    private static final int ROUNDS_COUNT = 3;
+
     public static void run(String gameName, Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -38,7 +40,7 @@ public class Engine {
                 break;
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
             String question = "";
             String correctAnswer = "";
 
